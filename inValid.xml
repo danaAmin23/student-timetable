@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Project 1 -->
+<fanshaweCollege
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="studentTimetable.xsd">
+
+  <studenttimetable>
+    <student name="Jason Genova" id = "9121211">
+      <program>Early Childhood Education</program>
+      <schoolName>Fanshawe College, London Campus</schoolName>
+      <term>S2018</term>
+    </student>
+
+    <classes>
+      <!-- classes -->
+
+      <course code="ACCT-3050-06">
+
+        <!--  a) A missing Required field - attribute id missing-->
+        <dayofWeek >
+
+          <hoursofClass>
+            <hour hour ='0800'></hour>
+            <hour hour= '0900'></hour>
+          </hoursofClass>
+          <roomNumber>B1036</roomNumber>
+        </dayofWeek>
+
+
+        <dayofWeek id="Monday">
+
+          <hoursofClass>
+            <hour hour ="0800"></hour>
+            <!-- e) Invalid text in hour field - attribute hour Nine is invalid-->
+            <hour hour="Nine"></hour>
+              
+          </hoursofClass>
+          <roomNumber>D2023</roomNumber>
+        </dayofWeek>
+      
+        <!-- d) Duplicate Day Field Monday showing twice-->
+          <dayofWeek id="Monday"></dayofWeek>
+         <dayofWeek id="Thursday"></dayofWeek>
+        <dayofWeek id="Friday"></dayofWeek>
+        
+      </course>
+
+      <!-- end class -->
+
+      <course code="ACCT-3022-03">
+        <!-- b) An included field that should not be included - attribute time added-->
+        <dayofWeek id="Monday" time="1200">
+          <hoursofClass>
+            <hour hour="1300"></hour>
+          </hoursofClass>
+          <roomNumber>D1015</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id ="Friday">
+          <hoursofClass>
+            <hour hour="1400"></hour>
+            <hour hour="1500"></hour>
+          </hoursofClass>
+          <roomNumber>D1015</roomNumber>
+        </dayofWeek>
+
+        
+        <dayofWeek id="Thursday"></dayofWeek>
+        <dayofWeek id="Wednesday"></dayofWeek>
+        <dayofWeek id="Tuesday"></dayofWeek>
+        
+        <!-- c) Invalid number of day fields below is day 6-->
+        <dayofWeek id="Tuesday"></dayofWeek>
+      </course>
+      
+   
+      <course code="SYST-3002-02">
+        <dayofWeek id ="Monday">
+          <hoursofClass>
+            <hour hour="1400"></hour>
+            <hour hour="1500"></hour>
+          </hoursofClass>
+          <roomNumber>D1015</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Friday">
+          <hoursofClass>
+            <hour hour ="1100"></hour>
+          </hoursofClass>
+          <roomNumber>F3004</roomNumber>
+        </dayofWeek>
+      
+        <dayofWeek id="Tuesday"></dayofWeek>
+      <dayofWeek id="Wednesday"></dayofWeek>
+      <dayofWeek id="Thursday"></dayofWeek>
+      
+      
+      </course>
+
+
+      <course code="FINA-3044-01">
+        <dayofWeek id="Tuesday">
+
+          <hoursofClass>
+            <hour hour ="0900"></hour>
+            <hour hour="1000"></hour>
+            <hour hour="1100"></hour>
+          </hoursofClass>
+          <roomNumber>H2004</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Monday"></dayofWeek>
+        <dayofWeek id="Wednesday"></dayofWeek>
+         <dayofWeek id="Thursday"></dayofWeek>
+        <dayofWeek id="Friday"></dayofWeek>
+        
+      
+      </course>
+      <course code="FINA-3042-03">
+        <dayofWeek id="Wednesday">
+          <hoursofClass>
+            <hour hour ="1200"></hour>
+            <hour hour="1300"></hour>
+          </hoursofClass>
+          <roomNumber>H2004</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Friday">
+          <hoursofClass>
+            <hour hour="1400"></hour>
+          </hoursofClass>
+          <roomNumber>H2002</roomNumber>
+        </dayofWeek>
+      
+        <dayofWeek id="Monday"></dayofWeek>
+      <dayofWeek id="Tuesday"></dayofWeek>
+      <dayofWeek id="Thursday"></dayofWeek>
+      
+        
+      </course>
+
+      <course code="LAWS-3041-06">
+        <dayofWeek id="Tuesday">
+          <hoursofClass>
+            <hour hour ="1500"></hour>
+          </hoursofClass>
+          <roomNumber>H2002</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Wednesday">
+          <hoursofClass>
+            <hour hour="1600"></hour>
+            <hour hour="1700"></hour>
+        </hoursofClass>
+          <roomNumber>F3004</roomNumber>
+        </dayofWeek>
+      
+       <dayofWeek id="Monday"></dayofWeek>
+      <dayofWeek id="Thursday"></dayofWeek>
+      <dayofWeek id="Friday"></dayofWeek>
+      
+      </course>
+      <!--end courses-->
+      
+      
+    </classes>
+  </studenttimetable>
+</fanshaweCollege>
+

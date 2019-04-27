@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Project 1 -->
+<fanshaweCollege
+  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="studentTimetable.xsd">
+
+  <studenttimetable>
+    <student name="Dana Amin" id = "0819393">
+      <program>IWD1</program>
+      <schoolName>Fanshawe College, London Campus</schoolName>
+      <term>W2018</term>
+    </student>
+
+    <classes>
+      <!-- classes -->
+
+      <course code="DTB-3090-01">
+        <dayofWeek id ="Monday">
+          <hoursofClass>
+            <hour hour= "0800"></hour>
+            <hour hour="0900"></hour>
+          </hoursofClass>
+          <roomNumber>B2029</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Wednesday">
+          <hoursofClass>
+            <hour hour="1100"></hour>
+            <hour hour="1200"></hour>
+          </hoursofClass>
+          <roomNumber>M3045</roomNumber>
+        </dayofWeek>
+        
+        <dayofWeek id="Tuesday"></dayofWeek>
+        <dayofWeek id="Friday"></dayofWeek>
+        <dayofWeek id="Thursday"></dayofWeek>
+
+
+
+      </course>
+
+      <!-- end class -->
+
+      <course code="HTML-3000-03">
+        <dayofWeek id="Tuesday">
+          <hoursofClass>
+            <hour hour="1200"></hour>
+            <hour hour="1300"></hour>
+          </hoursofClass>
+          <roomNumber>G9054</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Thursday">
+          <hoursofClass>
+            <hour hour="1500"></hour>
+            <hour hour="1600"></hour>
+            <hour hour="1700"></hour>
+          </hoursofClass>
+          <roomNumber>B4006</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Monday"></dayofWeek>
+        <dayofWeek id="Friday"></dayofWeek>
+        <dayofWeek id="Wednesday"></dayofWeek>
+
+      </course>
+
+      <course code="CYST-1000-05">
+        <dayofWeek id="Monday">
+          <hoursofClass>
+            <hour hour ="1200"></hour>
+            <hour hour="1300"></hour>
+          </hoursofClass>
+          <roomNumber>D5091</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Wednesday">
+          <hoursofClass>
+            <hour hour="1500"></hour>
+            <hour hour ="1600"></hour>
+            <hour hour="1700"></hour>
+          </hoursofClass>
+          <roomNumber>S2045</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Tuesday"></dayofWeek>
+        <dayofWeek id="Friday"></dayofWeek>
+        <dayofWeek id="Thursday"></dayofWeek>
+
+
+      </course>
+
+      <course code="OOP1-4000-03">
+        <dayofWeek id="Tuesday">
+          
+          <hoursofClass>
+            <hour hour="0900"></hour>
+            <hour hour="1000"></hour>
+          </hoursofClass>
+          <roomNumber>G9054</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Thursday">
+                    <hoursofClass>
+            <hour hour="0800"></hour>
+            <hour hour ="0900"></hour>
+          </hoursofClass>
+          <roomNumber>R2045</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Monday"></dayofWeek>
+        <dayofWeek id="Friday"></dayofWeek>
+        <dayofWeek id="Wednesday"></dayofWeek>
+
+
+      </course>
+
+      <course code="MATH-3042-09">
+        <dayofWeek id="Friday">
+          
+          <hoursofClass>
+            <hour hour="1000"></hour>
+            <hour hour="1100"></hour>
+            <hour hour="1200"></hour>
+          </hoursofClass>
+          <roomNumber>W2001</roomNumber>
+        </dayofWeek>
+
+        <dayofWeek id="Monday"></dayofWeek>
+        <dayofWeek id="Tuesday"></dayofWeek>
+        <dayofWeek id="Thursday"></dayofWeek>
+        <dayofWeek id="Wednesday"></dayofWeek>
+
+
+
+      </course>
+
+
+
+
+
+
+    </classes>
+  </studenttimetable>
+</fanshaweCollege>

@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Project 1</title>
+
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+
+        td {
+            width: 200px;
+            height: 50px;
+            text-align: left;
+            padding-left: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="studentName"></h1>
+    <h1 id="schoolName"></h1>
+    <h1 id="program"></h1>
+    <h1 id="term"></h1>
+    <script>
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "ValidTwo.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+	 //Access nodes via nodelist and node.length property
+	//puts request response int xmlDoc
+	var xmlDoc = xml.responseXML;
+
+	//name
+	var x = xmlDoc.getElementsByTagName('student');
+    var nameAttr = x[0].getAttribute('name');
+	var studentNum = x[0].getAttribute('id')
+	document.getElementById("studentName").innerHTML = "Timetable For :  " + nameAttr + " (#"  + studentNum + ")";
+
+	//school
+	var schoolName = xmlDoc.getElementsByTagName('schoolName')[0].childNodes[0].nodeValue;
+	document.getElementById("schoolName").innerHTML = "School :   " + schoolName;
+
+	//program
+    var program = xmlDoc.getElementsByTagName('program')[0].childNodes[0].nodeValue;
+	document.getElementById("program").innerHTML = "Program :   " + program;
+
+	 //term
+	 var term = xmlDoc.getElementsByTagName('term')[0].childNodes[0].nodeValue;
+	document.getElementById("term").innerHTML = "Term :   " + term;
+	//revert here if errors
+
+	//*****************************************************************
+
+	//store courses in an array
+
+	var courseData= xmlDoc.getElementsByTagName("course");// = sql
+
+
+	//loop through courses
+    for (var l = 0; l < courseData.length; l++){
+        //get course code
+		var courseCode = courseData[l].getAttributeNode("code").nodeValue;
+		//loop through days
+   
+		    for(var j = 0; j<courseData[l].getElementsByTagName("dayofWeek").length;j++){
+		        //loop through hours
+
+                //ignore dayofWeek nodes that dont have any childNodes
+                if (courseData[l].getElementsByTagName("dayofWeek")[j].hasChildNodes()) {
+                for (var i = 0; i < courseData[l].getElementsByTagName("dayofWeek")[j].getElementsByTagName("hoursofClass")[0].getElementsByTagName("hour").length; i++) {
+               
+                        var dayName = courseData[l].getElementsByTagName("dayofWeek")[j].getAttribute("id");
+                        var start = courseData[l].getElementsByTagName("dayofWeek")[j].getElementsByTagName("hoursofClass")[0].getElementsByTagName("hour")[i].getAttribute("hour");
+                        var room = courseData[l].getElementsByTagName("dayofWeek")[j].getElementsByTagName("roomNumber")[0].textContent;
+                        //instantiate txt which is a div name
+                        var txt = "";
+                        //text = a div in the table according to its hour slot
+                        txt = dayName + start;
+                        txt = txt.replace(/\s/g, '');
+                        //out put to proper div slot
+                        document.getElementById(txt).innerHTML += "Course : " + courseCode + '<br />' + "Room : " + room;
+                }//end if
+                   
+	           }// end hours
+        }//end days
+
+
+    }//end courses
+}//end myFunction()
+
+    </script>
+
+    <!-- table -->
+    <table id="myTable">
+
+        <!--DATE HEADING-->
+        <tr>
+            <td></td>
+            <td>Monday</td>
+            <td>Tuesday</td>
+            <td>Wednesday</td>
+            <td>Thursday</td>
+            <td>Friday</td>
+        </tr>
+
+        <tr>
+            <td>800</td>
+            <td id="Monday0800"></td>
+            <td id="Tuesday0800"></td>
+            <td id="Wednesday0800"></td>
+            <td id="Thursday0800"></td>
+            <td id="Friday0800"></td>
+        </tr>
+
+        <tr>
+            <td>900</td>
+            <td id="Monday0900"></td>
+            <td id="Tuesday0900"></td>
+            <td id="Wednesday0900"></td>
+            <td id="Thursday0900"></td>
+            <td id="Friday0900"></td>
+        </tr>
+
+        <tr>
+            <td>1000</td>
+            <td id="Monday1000"></td>
+            <td id="Tuesday1000"></td>
+            <td id="Wednesday1000"></td>
+            <td id="Thursday1000"></td>
+            <td id="Friday1000"></td>
+        </tr>
+
+        <tr>
+            <td>1100</td>
+            <td id="Monday1100"></td>
+            <td id="Tuesday1100"></td>
+            <td id="Wednesday1100"></td>
+            <td id="Thursday1100"></td>
+            <td id="Friday1100"></td>
+        </tr>
+
+        <tr>
+            <td>1200</td>
+            <td id="Monday1200"></td>
+            <td id="Tuesday1200"></td>
+            <td id="Wednesday1200"></td>
+            <td id="Thursday1200"></td>
+            <td id="Friday1200"></td>
+        </tr>
+
+        <tr>
+            <td>1300</td>
+            <td id="Monday1300"></td>
+            <td id="Tuesday1300"></td>
+            <td id="Wednesday1300"></td>
+            <td id="Thursday1300"></td>
+            <td id="Friday1300"></td>
+        </tr>
+
+        <tr>
+            <td>1400</td>
+            <td id="Monday1400"></td>
+            <td id="Tuesday1400"></td>
+            <td id="Wednesday1400"></td>
+            <td id="Thursday1400"></td>
+            <td id="Friday1400"></td>
+        </tr>
+
+        <tr>
+            <td>1500</td>
+            <td id="Monday1500"></td>
+            <td id="Tuesday1500"></td>
+            <td id="Wednesday1500"></td>
+            <td id="Thursday1500"></td>
+            <td id="Friday1500"></td>
+        </tr>
+
+        <tr>
+            <td>1600</td>
+            <td id="Monday1600"></td>
+            <td id="Tuesday1600"></td>
+            <td id="Wednesday1600"></td>
+            <td id="Thursday1600"></td>
+            <td id="Friday1600"></td>
+        </tr>
+
+        <tr>
+            <td>1700</td>
+            <td id="Monday1700"></td>
+            <td id="Tuesday1700"></td>
+            <td id="Wednesday1700"></td>
+            <td id="Thursday1700"></td>
+            <td id="Friday1700"></td>
+        </tr>
+
+        <tr>
+            <td>1800</td>
+            <td id="Monday1800"></td>
+            <td id="Tuesday1800"></td>
+            <td id="Wednesday1800"></td>
+            <td id="Thursday1800"></td>
+            <td id="Friday1800"></td>
+        </tr>
+
+        <tr>
+            <td>1900</td>
+            <td id="Monday1900"></td>
+            <td id="Tuesday1900"></td>
+            <td id="Wednesday1900"></td>
+            <td id="Thursday1900"></td>
+            <td id="Friday1900"></td>
+        </tr>
+
+        <tr>
+            <td>2000</td>
+            <td id="Monday2000"></td>
+            <td id="Tuesday2000"></td>
+            <td id="Wednesday2000"></td>
+            <td id="Thursday2000"></td>
+            <td id="Friday2000"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
